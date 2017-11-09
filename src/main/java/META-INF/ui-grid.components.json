@@ -1,0 +1,52 @@
+{
+	"name": "custom-cronos-components",
+	"version": "0.0.0",
+	"components": [
+		{
+			"name": "ui-grid",
+			"text_pt_BR": "UI Grid",
+			"text_en_US": "UI Grid",
+			"class": "adjust-icon mdi mdi-checkerboard",
+			"wrapper": true,
+			"templateURL": "__metainf__/ui-grid.template.html",
+			"properties": {
+				"onclick": {
+					"type": "event"
+				},
+				"target": {
+					"removable": false,
+					"type": "list",
+					"options": [
+						{
+							"key": "_blank",
+							"value": "Nova janela"
+						},
+						{
+							"key": "_self",
+							"value": "Mesma janela"
+						},
+						{
+							"key": "_parent",
+							"value": "Janela pai"
+						},
+						{
+							"key": "_top",
+							"value": "Top"
+						}
+					]
+				},
+				"href": {
+					"removable": false,
+					"type": "projectResource",
+					"resourceType": "text/html"
+				},
+				"ui-grid": {
+    				"displayName_pt_BR": "Fonte de dados",
+    				"displayName_en_US": "Datasource",
+    				"removable": false,
+    				"type": "pageDatasource"
+				}
+			}
+		}
+	]
+}
