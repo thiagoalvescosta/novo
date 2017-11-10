@@ -3,9 +3,10 @@
     <persistence-unit name="app" transaction-type="RESOURCE_LOCAL">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
         <jta-data-source>java:comp/env/jdbc/main</jta-data-source>
+        <class>app.entity.Class1</class>
         <class>app.entity.User</class>
         <class>app.entity.Role</class>
-            <properties>
+        <properties>
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:h2:file:~/28d3889507af4c6095dd246be51e96d6;DATABASE_TO_UPPER=false;ALIAS_COLUMN_NAME=true;AUTO_SERVER=TRUE"/>
             <property name="javax.persistence.jdbc.user" value="root"/>

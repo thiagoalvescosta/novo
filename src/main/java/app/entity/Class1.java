@@ -7,19 +7,19 @@ import javax.xml.bind.annotation.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonFilter;
 import cronapi.rest.security.CronappSecurity;
+import cronapi.CronapiCloud;
 
 
 /**
- * Classe que representa a tabela ROLE
+ * Classe que representa a tabela CLASS1
  * @generated
  */
 @Entity
-@IdClass(RolePK.class)
-@Table(name = "\"ROLE\"")
+@Table(name = "\"CLASS1\"")
 @XmlRootElement
-@CronappSecurity(post = "Administrators", get = "Administrators", delete = "Administrators", put = "Administrators")
-@JsonFilter("app.entity.Role")
-public class Role implements Serializable {
+@CronappSecurity
+@JsonFilter("app.entity.Class1")
+public class Class1 implements Serializable {
 
   /**
    * UID da classe, necessário na serialização
@@ -35,17 +35,18 @@ public class Role implements Serializable {
   private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
 
   /**
-   * @generated
-   */
-  @Id
-  @JoinColumn(name="fk_user", nullable = false, referencedColumnName = "id", insertable=true, updatable=true)
-  private User user;
+  * @generated
+  */
+  @Column(name = "imagem", nullable = true, unique = false, insertable=true, updatable=true)
+  @CronapiCloud(type = "dropbox", value="dasd")
+  
+  private java.lang.String imagem;
 
   /**
    * Construtor
    * @generated
    */
-  public Role(){
+  public Class1(){
   }
 
 
@@ -64,28 +65,28 @@ public class Role implements Serializable {
    * @param id id
    * @generated
    */
-  public Role setId(java.lang.String id){
+  public Class1 setId(java.lang.String id){
     this.id = id;
     return this;
   }
 
   /**
-   * Obtém user
-   * return user
+   * Obtém imagem
+   * return imagem
    * @generated
    */
   
-  public User getUser(){
-    return this.user;
+  public java.lang.String getImagem(){
+    return this.imagem;
   }
 
   /**
-   * Define user
-   * @param user user
+   * Define imagem
+   * @param imagem imagem
    * @generated
    */
-  public Role setUser(User user){
-    this.user = user;
+  public Class1 setImagem(java.lang.String imagem){
+    this.imagem = imagem;
     return this;
   }
 
@@ -96,9 +97,8 @@ public class Role implements Serializable {
   public boolean equals(Object obj) {
     if (this == obj) return true;
     if (obj == null || getClass() != obj.getClass()) return false;
-    Role object = (Role)obj;
+    Class1 object = (Class1)obj;
     if (id != null ? !id.equals(object.id) : object.id != null) return false;
-    if (user != null ? !user.equals(object.user) : object.user != null) return false;
     return true;
   }
 
@@ -109,7 +109,6 @@ public class Role implements Serializable {
   public int hashCode() {
     int result = 1;
     result = 31 * result + ((id == null) ? 0 : id.hashCode());
-    result = 31 * result + ((user == null) ? 0 : user.hashCode());
     return result;
   }
 

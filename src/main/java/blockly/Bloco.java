@@ -12,15 +12,17 @@ public class Bloco {
 
 	/**
 	 *
+	 * @param Dados
 	 * @return Var
 	 */
 	// Bloco
-	public static Var Executar() throws Exception {
+	public static Var Executar(Var Dados) throws Exception {
 		return new Callable<Var>() {
 
 			public Var call() throws Exception {
-				cronapi.util.Operations.callClientFunction(Var.valueOf("cronapi.screen.notify"), Var.valueOf("success"),
-						app.TesteCorreios.buscarCEP(Var.valueOf("41830498")));
+				cronapi.database.Operations.execute(Var.valueOf("app.entity.User"),
+						Var.valueOf("update User set email = :email"),
+						Var.valueOf("email", Var.valueOf("admin@admin")));
 				return Var.VAR_NULL;
 			}
 		}.call();

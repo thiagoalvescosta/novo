@@ -39,12 +39,6 @@
 					"removable": false,
 					"type": "projectResource",
 					"resourceType": "text/html"
-				},
-				"ui-grid": {
-    				"displayName_pt_BR": "Fonte de dados",
-    				"displayName_en_US": "Datasource",
-    				"removable": false,
-    				"type": "pageDatasource"
 				}
 			}
 		}

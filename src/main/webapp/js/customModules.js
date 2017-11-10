@@ -1,1 +1,1 @@
-window.customModules = [];
+window.customModules = ['ngTouch', 'ui.grid'];
